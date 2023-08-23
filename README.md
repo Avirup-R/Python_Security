@@ -12,4 +12,4 @@
 ```
 python .\security_manager.py 
 ```
-** Note: This only works on Windows 10 and Windows 11 machines. Also it tampers with the registory of your system, so be careful. **
+**Note: This only works on Windows 10 and Windows 11 machines. Also it tampers with the registory of your system, so be careful.**
