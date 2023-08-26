@@ -2,7 +2,6 @@ import subprocess
 
 def run_registry_file(reg_file_path):
     try:
-        # Use the 'regedit' command to import the registry file
         subprocess.run(['regedit', '/s', reg_file_path], check=True)
         print("Registry file imported successfully.")
     except subprocess.CalledProcessError:
@@ -10,10 +9,8 @@ def run_registry_file(reg_file_path):
 
 
 def remove_website_rule(website):
-    # PowerShell command to remove the outbound rule blocking the website
     powershell_command = f"Remove-NetFirewallRule -DisplayName 'Block {website}'"
 
-    # Run the PowerShell command to remove the rule
     try:
         subprocess.run(["powershell", powershell_command], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f"Rule blocking {website} removed successfully.")
